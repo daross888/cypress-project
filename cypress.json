@@ -1,0 +1,5 @@
+{
+    "testFiles": "**/*.{feature,features}",
+    "defaultCommandTimeout": 30000,
+    "video": false
+}

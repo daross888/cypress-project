@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  cypress-chrome:
+    container_name: cypress-chrome
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["npm", "run", "chrome:test"]
+    volumes:
+      - ./reports:/cypress-project/reports
+      - ./cypress/cucumber-json:/cypress-project/cypress/cucumber-json
+      - ./cypress/screenshots:/cypress-project/cypress/screenshots
+
+  cypress-firefox:
+    container_name: cypress-firefox
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["npm", "run", "firefox:test"]
+    volumes:
+      - ./reports:/cypress-project/reports
+      - ./cypress/cucumber-json:/cypress-project/cypress/cucumber-json
+      - ./cypress/screenshots:/cypress-project/cypress/screenshots
