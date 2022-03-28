@@ -9,7 +9,7 @@ When("I click the links", () => {
         cy.get("a").each(link => {
             const url = link.prop("href");
 
-            if(url && !url.startsWith(currentUrl) && !url.includes("mailto:") && !url.includes(".edu.") && !url.includes("twitter") && !url.includes('tel:') && !urls.includes(url)) {
+            if(url && !url.startsWith(currentUrl) && !url.includes("mailto:") && !url.includes('tel:') && !urls.includes(url)) {
                 urls.push(url);
             }
         })
